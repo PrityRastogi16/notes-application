@@ -28,7 +28,7 @@ const form = document.getElementById("formm");
     }).then((res) => res.json())
     .then((data) => {
       console.log(data);
-      localStorage.setItem('user', JSON.stringify({ name: data.name }));
+      localStorage.setItem('user', JSON.stringify(data.user.name));
       setTimeout(() => {
         window.location.href = "index.html";
       }, 2000);
@@ -49,15 +49,17 @@ loginForm.addEventListener("submit",(e)=>{
             "Content-type": "application/json",
           },
           body: JSON.stringify({
-            email: document.getElementById("semail").value,
-            pass: document.getElementById("spass").value,
+            email: document.getElementById("lemail").value,
+            pass: document.getElementById("lpass").value,
+            
           }),
+
         })
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
             localStorage.setItem("token",data.token)
-            localStorage.setItem('user', JSON.stringify({ name: data.name }));
+            localStorage.setItem('user', JSON.stringify(data.user.name));
             setTimeout(() => {
               window.location.href = "index.html";
 
@@ -65,3 +67,6 @@ loginForm.addEventListener("submit",(e)=>{
           })
           .catch((err) => console.log(err));
       };
+
+    //   Displaying notes
+    
