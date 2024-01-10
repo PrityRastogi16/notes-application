@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login and Signup Form</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .form-container {
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+    }
+
+    .form-container h2 {
+      color: #333;
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+    }
+
+    .form input {
+      margin-bottom: 15px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .form button {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .form button:hover {
+      background-color: #45a049;
+    }
+
+    .toggle-form {
+      margin-top: 10px;
+      color: #333;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  </style>
+  
+</head>
+<body>
+
+<div class="form-container" id="signupForm">
+  <h2>Signup</h2>
+  <form class="form" id="formm">
+    <input type="text" placeholder="name" id="sname" required>
+    <input type="email" placeholder="Email" id="semail" required>
+    <input type="password" placeholder="Password" id="spass" required>
+    <button type="submit" onclick="registerUser()">Signup</button>
+  </form>
+  <p class="toggle-form" onclick="toggleForms()">Already have an account? Login</p>
+</div>
+
+<div class="form-container" id="loginForm" style="display: none;">
+  <h2>Login</h2>
+  <div class="form">
+    <input type="email" placeholder="Email" required id="lemail">
+    <input type="password" placeholder="Password" required id="lpass">
+    <button type="submit">Login</button>
+  </div>
+  <p class="toggle-form" onclick="toggleForms()">Don't have an account? Signup</p>
+</div>
+<script>
+    const form = document.getElementById("formm");
+    form.addEventListener("submit",(e)=>{
+        e.preventDefault();
+    })
+    const registerUser=()=>{
+    
+    fetch("https://handsome-ray-fatigues.cyclic.app/user/register",{
+        method:"POST",
+        headers:{
+            "Content-type":"application/json"
+        },
+        body:JSON.stringify({
+            name:document.getElementById("sname").value,
+            email:document.getElementById("semail").value,
+            pass:document.getElementById("spass").value
+        })
+    }).then(res=>res.json())
+    .then(data=>console.log(data))
+
+    .catch(err=>console.log(err))
+}
+</script>
+<script src="./signup.js"></script>
+</body>
+</html>
