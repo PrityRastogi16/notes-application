@@ -74,43 +74,23 @@
     <input type="text" placeholder="name" id="sname" required>
     <input type="email" placeholder="Email" id="semail" required>
     <input type="password" placeholder="Password" id="spass" required>
-    <button type="submit" onclick="registerUser()">Signup</button>
+    <button type="submit" onclick="registerUser()" id="signupButton">Signup</button>
   </form>
   <p class="toggle-form" onclick="toggleForms()">Already have an account? Login</p>
 </div>
 
-<div class="form-container" id="loginForm" style="display: none;">
+<form class="form-container" id="loginForm" style="display: none;">
   <h2>Login</h2>
   <div class="form">
     <input type="email" placeholder="Email" required id="lemail">
     <input type="password" placeholder="Password" required id="lpass">
-    <button type="submit">Login</button>
+    <button type="submit" onclick="loginUser()">Login</button>
   </div>
   <p class="toggle-form" onclick="toggleForms()">Don't have an account? Signup</p>
-</div>
-<script>
-    const form = document.getElementById("formm");
-    form.addEventListener("submit",(e)=>{
-        e.preventDefault();
-    })
-    const registerUser=()=>{
+</form>
+<!-- <script>
     
-    fetch("https://handsome-ray-fatigues.cyclic.app/user/register",{
-        method:"POST",
-        headers:{
-            "Content-type":"application/json"
-        },
-        body:JSON.stringify({
-            name:document.getElementById("sname").value,
-            email:document.getElementById("semail").value,
-            pass:document.getElementById("spass").value
-        })
-    }).then(res=>res.json())
-    .then(data=>console.log(data))
-
-    .catch(err=>console.log(err))
-}
-</script>
+</script> -->
 <script src="./signup.js"></script>
 </body>
 </html>

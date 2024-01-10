@@ -14,7 +14,7 @@ userRouter.post("/register",async(req,res)=>{
             }else{
                 const user = new UserModel({name,pass:hash,email})
                 await user.save();
-                res.status(200).json({msg:"New user register !"})
+                res.status(200).json({msg:"New user register !",user})
             }
         })
     }catch(err){
@@ -32,7 +32,7 @@ userRouter.post("/login",async(req,res)=>{
             if(result){
                 const token = jwt.sign({userID:user._id,user:user.name},"prits")
 
-                res.json({msg:"Login successful",token})
+                res.json({msg:"Login successful",user,token})
             }else{
                 res.json({msg:"Wrong email and password"})
             }

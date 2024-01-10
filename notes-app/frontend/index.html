@@ -34,13 +34,18 @@
                  
                 </ul>
                 <form class="d-flex" role="search">
-                 <a href="./signup.html" class="btn btn-outline-success" type="submit">Sign Up</a>
+                 <a href="./signup.html" class="btn btn-outline-success" type="submit" id="signupButton">Sign Up</a>
                 </form>
               </div>
             </div>
           </nav>
     </div>
-
+    <script>
+        const user = JSON.parse(localStorage.getItem('user'));
+         if (user && user.name) {
+    document.getElementById('signupButton').innerText = `Welcome, ${user.name}!`;
+        }
+    </script>
 
 
     <!-- Bootstrap -->
