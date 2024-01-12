@@ -1,78 +1,269 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notes App</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>My NoteBook</title>
+
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <!-- Custom styles for this template -->
+  <link href="./index.css" rel="stylesheet" />
+
+
 </head>
-<link rel="stylesheet" href="index.css">
 
 <body>
-    <div>
-        <!-- Nav bar -->
-        <nav class="navbar navbar-expand-lg bg-primary ">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">Navbar</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">About Us</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Contact Us</a>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Blog</a>
-                      </li>
-                  </li>
-                 
-                </ul>
+  <div class="top_container">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              Our NoteBook
+            </span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-                <form class="d-flex" role="search">
-                 <a href="./signup.html" class="btn btn-outline-success" type="submit" id="signupButton">Sign Up</a>
-                </form>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav  ">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html"> Home</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Blog</a>
+                </li> 
+                <li class="nav-item active">
+                  <a class="nav-link" href="./signup.html">SignUp</a>
+                </li> 
+
+              </ul>
+            </div>
+        </nav>
+      </div>
+    </header>
+    <section class="hero_section ">
+      <div class="hero-container container">
+        <div class="hero_detail-box">
+          <h1>
+            Explore Ideas,
+            <br>
+            Share Insights.
+          </h1>
+          <p>
+            Unleash your creativity, share your thoughts, and let's build a community of inspiration and knowledge.
+          </p>
+          <div class="hero_btn-continer">
+            <a href="" class="call_to-btn btn_white-border">
+              Read More
+            </a>
+          </div>
+        </div>
+        <div class="hero_img-container">
+          <div>
+            <img src="images/notebook.jpg" alt="" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- end header section -->
+
+  <div class="common_style">
+
+    <!-- about section -->
+    <section class="about_section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="about_img-container">
+              <img src="images/about.png" alt="">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="about_detail-box">
+              <h3>
+                About our notebook app
+              </h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+              </p>
+              <div class="">
+                <a href="" class="call_to-btn btn_white-border">
+                  Read More
+                </a>
               </div>
             </div>
-          </nav>
-          <div>
-
-
-            <br> <br> <br>
-            <div class="container">
-            <div class="mb-3">
-              <label for="title" class="form-label">Title</label>
-              <input type="text" class="form-control" id="title" aria-describedby="emailHelp">
-              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-            </div>
-            <div class="mb-3">
-              <label for="body" class="form-label" >Body</label>
-              <input type="text" class="form-control" id="body" >
-            </div>
-            <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
+          </div>
         </div>
-          </div>
-          <div>
-            <h1>Your Notes</h1>
-            <div id="parent"></div>
-          </div>
-    </div>
-    <script>
-        const user = JSON.parse(localStorage.getItem('user'));
-         if (user) {
-    document.getElementById('signupButton').innerText = `Welcome, ${user}!`;
-        }
-    </script>
+      </div>
+    </section>
+    <!-- contact section -->
 
-  <script src="./index.js"></script>
-    <!-- Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <section class="contact_section ">
+
+        <div class="container">
+         
+          <div class="row">
+            <div class="col-md-6"  style="width: 35%">
+              <div class="d-flex justify-content-center d-md-block">
+                <h2>
+                  Contact Us
+                </h2>
+              </div>
+              <form action="">
+                <div class="contact_form-container">
+                  <div>
+                    <div>
+                      <input type="text" placeholder="Name">
+                    </div>
+                    <div>
+                      <input type="email" placeholder="Email">
+                    </div>
+                    <div>
+                      <input type="text" placeholder="Phone Number">
+                    </div>
+                    <div class="mt-5">
+                      <input type="text" placeholder="Message">
+                    </div>
+                    <div class="mt-5">
+                      <button type="submit">
+                        send
+                      </button>
+                    </div>
+                  </div>
+    
+                </div>
+    
+              </form>
+            </div>
+            <div class="col-md-6">
+              <div class="contact_img-box">
+                <img src="https://img.lovepik.com/free-png/20210926/lovepik-stacked-study-books-png-image_401492452_wh1200.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- end contact section -->
+      <section class="info_section layout_padding-top">
+        <div class="info_logo-box">
+          <br> <br>
+          <h2>
+              My NoteBook
+          </h2>
+        </div>
+          <div class="container layout_padding2">
+            <div class="row">
+              <div class="col-md-3">
+                <h5>
+                    About Us                                                                             
+                </h5>
+               <p>
+                  dolor sit amet, consectetur magna aliqua. Ut enim ad minim veniam, quisdotempor incididunt r 
+               </p>
+              </div>
+              <!-- <div class="col-md-3">
+                <h5>
+                    Useful Link 
+                </h5>
+                <ul>
+                  <li>
+                    <a href="">
+                        Video games
+                    </a>
+                  </li>
+                  <li>
+                   <a href="">
+                      Remote control
+                   </a>
+                  </li>
+                  <li>
+                    <a href="">
+                        3d controller
+                    </a>
+                  </li>
+                </ul>
+              </div> -->
+              <div class="col-md-3">
+                <!-- <h5>
+                    Contact Us
+                </h5> -->
+                <br> <br>
+                <p>
+                    dolor sit amet, consectetur magna aliqua. quisdotempor incididunt ut e 
+                </p>
+              </div>
+              <div class="col-md-3">
+           
+                <div class="subscribe_container">
+                  <h5>
+                      Newsletter
+                  </h5>
+                  <div class="form_container">
+                    <form action="">
+                      <input type="email" placeholder="Enter your email">
+                      <button type="submit">
+                        Subscribe
+                      </button>
+                    </form>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+          <!-- <div class="container">
+              <div class="social_container">
+                 
+                  <div class="social-box">
+                    <a href="">
+                      <img src="./assets/download (1).jpeg" alt="">
+                    </a>
+      
+                    <a href="">
+                      <img src="./assets/download (5).png" alt="">
+                    </a>
+                    <a href="">
+                      <img src="./assets/download (6).png" alt="">
+                    </a>
+                    <a href="">
+                      <img src="./assets/download.jpeg" alt="">
+                    </a>
+                  </div>
+                </div>
+          </div> -->
+        </section>
+
+  <!-- footer section -->
+  <section class="container-fluid footer_section">
+    <p>
+      Copyright &copy; 2019 All Rights Reserved By Prity
+    </p>
+  </section>
+  <!-- footer section -->
+
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  
 </body>
+
 </html>

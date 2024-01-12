@@ -40,3 +40,375 @@
   background-color: #f44336;
 }
   
+/* ******************************************************************* */
+/* Reset some default styles and apply a box-sizing border-box */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header Styles */
+
+.header_section {
+  background-color: #333;
+  padding: 20px 0;
+}
+
+.custom_nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand span {
+  color: #fff;
+  font-size: 24px;
+}
+
+
+/* ####### */
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-nav li {
+  display: inline-block;
+  margin-right: 20px; /* Adjust as needed */
+}
+
+/* Optional: Add some styling to the links */
+.navbar-nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav a:hover {
+  color: #007bff; /* Change to your desired hover color */
+}
+/* ########### */
+/* Hero Section Styles */
+
+.hero_section {
+  /* background: #cbddf0; */
+  padding: 170px 0;
+  background-image: url(https://img.freepik.com/free-photo/top-view-desk-concept-with-copy-space_23-2148236856.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; 
+  /* background-position: center; */
+  /* display: flex; */
+  /* align-items: center; */
+
+}
+
+.hero_detail-box {
+  flex: 1;
+}
+
+.hero_detail-box h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+  margin-left: 65%;
+}
+
+.hero_detail-box p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 30px;
+  margin-left: 65%;
+}
+
+.hero_btn-continer {
+  margin-top: 20px;
+  margin-left: 65%;
+}
+
+.call_to-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+/* About Section Styles */
+
+.about_section {
+  padding: 80px 0;
+  display: flex;
+  align-items: center;
+}
+
+.about_img-container {
+  flex: 1;
+}
+
+.about_img-container img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.about_detail-box {
+  flex: 1;
+  padding: 0 40px;
+}
+
+.about_detail-box h3 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.about_detail-box p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* Contact Section Styles */
+
+/* .contact_section {
+  background: #007bff;
+  color: #fff;
+  padding: 80px 0;
+  display: flex;
+  align-items: center;
+}
+
+.contact_form-container {
+  flex: 1;
+  padding: 0 40px;
+}
+
+.contact_form-container input,
+.contact_form-container button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.contact_form-container button {
+  background: #fff;
+  color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact_img-box {
+  flex: 1;
+  text-align: center;
+}
+
+.contact_img-box img {
+  width: 80%;
+  border-radius: 5px;
+} */
+/* Contact Section Styles */
+
+.contact_section {
+  background: #3498db; /* Blue color for the contact section */
+  color: #fff;
+  padding: 80px 0;
+}
+
+.contact_section h2 {
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contact_form-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contact_form-container input,
+.contact_form-container button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+}
+
+.contact_form-container input {
+  background: #fff;
+  color: #333;
+  
+}
+
+.contact_form-container button {
+  background: #fff;
+  color: #3498db; /* Blue color for the button text */
+  cursor: pointer;
+}
+
+.contact_form-container button:hover {
+  background: #007bff; /* Hover color for the button */
+  color: #fff;
+  border: 1px solid #090909;
+}
+
+.contact_img-box {
+  text-align: center;
+}
+
+.contact_img-box img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-left: 500px;
+}
+
+/* Info Section Styles */
+.info_section {
+  background-color: #363636;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.info_logo-box {
+  display: flex;
+  justify-content: center;
+}
+
+.info_logo-box h2 {
+  font-weight: bold;
+  padding: 5px 7px;
+  margin-top: 50px;
+  border-bottom: 1.5px solid #007bff;
+}
+
+.info_section ul {
+  padding: 0;
+}
+
+.info_section ul li {
+  list-style-type: none;
+  margin: 3px 0;
+}
+
+.info_section ul li a {
+  color: #ffffff;
+}
+
+.info_section ul li a:hover {
+  color: #007bff;
+}
+
+.info_section h5 {
+  margin-bottom: 12px;
+  font-size: 22px;
+}
+
+
+
+.info_section .form_container input {
+  width: 225px;
+  height: 40px;
+  padding: 10px;
+}
+
+.info_section .form_container input::placeholder {
+  color: #ccc8c8;
+}
+
+.info_section .form_container button {
+  background-color: #007bff;
+  border: none;
+  outline: none;
+  color: #fff;
+  padding: 8px 30px;
+  margin-top: 15px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.social_container {
+  width: 90%;
+  margin: 0 auto;
+  border-top: 1px solid #898989;
+  padding: 25px 0;
+}
+
+.info_section .social-box {
+  margin: 0 auto;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.info_section .social-box img {
+  width: 35px;
+  margin-right: 5px;
+}
+/* .info_section { */
+  /* background: #333;
+  color: #fff;
+  padding: 60px 0;
+}
+
+.info_logo-box h2 {
+  color: #007bff;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Social Container Styles */
+
+.social_container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.social-box img {
+  width: 30px;
+  margin-right: 15px;
+}
+
+/* Footer Section Styles */
+
+.footer_section {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  /* position: fixed; */
+  bottom: 0;
+  width: 100%;
+}
+
+.footer_section a {
+  color: #007bff;
+}
+.row{
+  display: flex;
+}
+.contact_img-box{
+  height: 350px;
+  width: 350px;
+}
+/* Responsive Styles */

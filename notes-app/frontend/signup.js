@@ -28,10 +28,11 @@ const form = document.getElementById("formm");
     }).then((res) => res.json())
     .then((data) => {
       console.log(data);
-      localStorage.setItem('user', JSON.stringify(data.user.name));
+      // localStorage.setItem('user', JSON.stringify(data.user.name));
       setTimeout(() => {
-        window.location.href = "index.html";
+        window.location.href = "signup.html";
       }, 2000);
+
     })
     .catch((err) => console.log(err));
 }
@@ -59,9 +60,9 @@ loginForm.addEventListener("submit",(e)=>{
           .then((data) => {
             console.log(data);
             localStorage.setItem("token",data.token)
-            localStorage.setItem('user', JSON.stringify(data.user.name));
+            localStorage.setItem("user", JSON.stringify(data.user.name));
             setTimeout(() => {
-              window.location.href = "index.html";
+              window.location.href = "notes.html";
 
             }, 2000);
           })

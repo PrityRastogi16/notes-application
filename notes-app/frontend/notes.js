@@ -2,6 +2,11 @@ const mainSection = document.getElementById("parent");
 const titlep = document.getElementById("title");
 const bodyp = document.getElementById("body");
 const submitBtn = document.getElementById("submitBtn");
+const userName = document.getElementById("headerUser")
+const createBtn = document.getElementById("createBtn");
+
+
+userName.innerText = `Hi, ${localStorage.getItem("user")}`
 
 async function fetchData(){
     try{
@@ -134,4 +139,31 @@ async function updateNote(item){
     catch(err){
       console.log(err);
     }
+}
+
+
+// Post
+createBtn.addEventListener("click",(e)=>{
+  e.preventDefault();
+  createNote();
+})
+
+async function createNote(){
+  try{
+   let res = await fetch(`https://handsome-ray-fatigues.cyclic.app/notes/create`,{
+      method: 'POST',
+      headers: {
+        "Content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem('token')}`
+      },
+      body:JSON.stringify({
+          title  : titlep.value,
+         body:bodyp.value
+       })
+   })
+    fetchData()
+  }
+  catch(err){
+    console.log(err);
+  }
 }
