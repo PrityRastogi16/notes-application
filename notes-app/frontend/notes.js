@@ -70,7 +70,7 @@ function createCard(item){
 
          bodyp.value=item.body;
          currEdit=item;
-        // editNotes(item);
+        editNotes(item);
     })
 
     const del = document.createElement('button');
@@ -88,9 +88,9 @@ function createCard(item){
     return card;
 }
 
-async function deleteNote(noteID) {
+async function deleteNote(item) {
     try {
-      let res = await fetch(`https://handsome-ray-fatigues.cyclic.app/notes/delete/${noteID}`, {
+      let res = await fetch(`https://handsome-ray-fatigues.cyclic.app/notes/delete/${item._id}`, {
         method: 'DELETE',
         headers: {
           "Content-type": "application/json",
@@ -110,12 +110,12 @@ async function deleteNote(noteID) {
   
 // Editing
 
-// function editNotes(item){
-//   titlep.value = item.title;
+function editNotes(item){
+  titlep.value = item.title;
 
-//   bodyp.value = item.body;
-// //   currEdit = item;
-// }
+  bodyp.value = item.body;
+    currEdit = item;
+}
 
 submitBtn.addEventListener('click',(e)=>{
     e.preventDefault();
@@ -131,7 +131,7 @@ async function updateNote(item){
         },
         body:JSON.stringify({
             title  : titlep.value,
-           body:bodyp.value
+           body :bodyp.value
          })
      })
       fetchData()
@@ -140,30 +140,85 @@ async function updateNote(item){
       console.log(err);
     }
 }
+// function updateNote(data) {
+//   const noteList = document.getElementById("note-card-list");
+//   const notes = data.notes_data;
+
+//   notes.forEach((note) => {
+//     const noteCard = document.createElement("div");
+//     noteCard.classList.add("note-card");
+
+//     const title = document.createElement("h3");
+//     title.innerText = note.title;
+
+//     const content = document.createElement("p");
+//     content.innerText = note.body;
+
+//     const editBtn = document.createElement("button");
+//     editBtn.className = "btn1";
+//     editBtn.innerText = "Edit";
+//     editBtn.addEventListener("click", () => {
+//         openEditModal(note._id, note.title, note.body);
+//       });
+
+//     const deleteBtn = document.createElement("button");
+//     deleteBtn.className = "btn1";
+//     deleteBtn.innerText = "Delete";
+//     deleteBtn.addEventListener("click", () => {
+//         deleteNote(note._id)
+//     });
+
+//     noteCard.append(title, content, editBtn, deleteBtn);
+    
+
+//     noteList.appendChild(noteCard);
+//   });
+// }
+
+// getData();
+// async function updateNote(item){
+//     try{
+//      let res = await fetch(`https://handsome-ray-fatigues.cyclic.app/notes/update/${item._id}`,{
+//         method: 'PATCH',
+//         headers: {
+//           "Content-type": "application/json",
+//           authorization: `Bearer ${localStorage.getItem('token')}`
+//         },
+//         body:JSON.stringify({
+//             title  : titlep.value,
+//            body:bodyp.value
+//          })
+//      })
+//       fetchData()
+//     }
+//     catch(err){
+//       console.log(err);
+//     }
+// }
 
 
-// Post
-createBtn.addEventListener("click",(e)=>{
-  e.preventDefault();
-  createNote();
-})
+// // Post
+// createBtn.addEventListener("click",(e)=>{
+//   e.preventDefault();
+//   createNote();
+// })
 
-async function createNote(){
-  try{
-   let res = await fetch(`https://handsome-ray-fatigues.cyclic.app/notes/create`,{
-      method: 'POST',
-      headers: {
-        "Content-type": "application/json",
-        authorization: `Bearer ${localStorage.getItem('token')}`
-      },
-      body:JSON.stringify({
-          title  : titlep.value,
-         body:bodyp.value
-       })
-   })
-    fetchData()
-  }
-  catch(err){
-    console.log(err);
-  }
-}
+// async function createNote(){
+//   try{
+//    let res = await fetch(`https://handsome-ray-fatigues.cyclic.app/notes/create`,{
+//       method: 'POST',
+//       headers: {
+//         "Content-type": "application/json",
+//         authorization: `Bearer ${localStorage.getItem('token')}`
+//       },
+//       body:JSON.stringify({
+//           title  : titlep.value,
+//          body:bodyp.value
+//        })
+//    })
+//     fetchData()
+//   }
+//   catch(err){
+//     console.log(err);
+//   }
+// }
