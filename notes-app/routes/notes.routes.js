@@ -6,6 +6,54 @@ const noteRouter = express.Router();
 
 noteRouter.use(auth);
 
+/**
+ * @swagger
+ * components:
+ *      schemas:
+ *          User:
+ *               type: object
+ *               properties:
+ *                       id:
+ *                          type: string
+ *                          description: The auto-generated id
+ *                       name:
+ *                           type: string
+ *                           description: The User name
+ *                       email:
+ *                            type: string
+ *                            description: The User Email
+ *                       age:   
+ *                          type: integer
+ *                          description: The User age           
+ */
+
+/**
+ * @swagger
+ * /**
+ * @swagger
+ * /notes/create:
+ *  post:
+ *      summary: The post Details
+ *      tag: [Users]
+ *      requestBody:
+ *          required: true
+ *          content:
+ *              application/json:
+ *                      schema:
+ *                          $ref: "#/components/schemas/User"
+ *      responses:
+ *          200:
+ *               description: The list of all the users
+ *               content:
+ *                      application/json:
+ *                              schema:
+ *                                  type: array
+ *                                  items: 
+ *                                      $ref: "#/components/schemas/User"
+ *          500:
+ *              description: Some server error
+ * 
+ */
 noteRouter.post("/create",async(req,res)=>{
  try{
     const note = new NoteModel(req.body);
@@ -16,6 +64,24 @@ noteRouter.post("/create",async(req,res)=>{
  }
 })
 
+
+/**
+ * @swagger
+ * /notes:
+ *  get:
+ *      summary: This will get all the users data from the database
+ *      tag: [Users]
+ *      responses:
+ *          200:
+ *               description: The list of all the users
+ *               content:
+ *                      application/json:
+ *                              schema:
+ *                                  type: array
+ *                                  items: 
+ *                                      $ref: "#/components/schemas/User"
+ * 
+ */
 noteRouter.get("/",async(req,res)=>{
     try{
       const notes = await NoteModel.find({userID:req.body.userID})
@@ -25,7 +91,38 @@ noteRouter.get("/",async(req,res)=>{
     }
 })
 
-
+/**
+ * @swagger
+ * /notes/update/{id}:
+ *  patch:
+ *      summary: Remove the User
+ *      tag: [Users]
+ *      parameters:
+ *          - in: 
+ *            name: id
+ *            schema:
+ *              type: string
+ *            required: true
+ *            description: The user id
+ *      requestBody:
+ *          required: true
+ *          content:
+ *              application/json:
+ *                      schema:
+ *                          $ref: "#/components/schemas/User"
+ *      responses:
+ *          200:
+ *               description: The list of all the users
+ *               content:
+ *                      application/json:
+ *                              schema:
+ *                                  type: array
+ *                                  items: 
+ *                                      $ref: "#/components/schemas/User"
+ *          400:
+ *              description: Some server error
+ * 
+ */
 noteRouter.patch("/update/:noteID",async(req,res)=>{
     const {noteID} = req.params;
     const payload = req.body;
@@ -39,6 +136,27 @@ noteRouter.patch("/update/:noteID",async(req,res)=>{
     }
 })
 
+
+/**
+ * @swagger
+ * /notes/delete/{id}:
+ *  delete:
+ *      summary: Remove the User
+ *      tag: [Users]
+ *      parameters:
+ *          - in: 
+ *            name: id
+ *            schema:
+ *              type: string
+ *            required: true
+ *            description: The user id
+ *      responses:
+ *          200:
+ *               description: The user was deleted
+ *          400:
+ *              description: Some server error
+ * 
+ */
 noteRouter.delete("/delete/:noteID",async(req,res)=>{
     const {noteID} = req.params;
     const payload = req.body;
